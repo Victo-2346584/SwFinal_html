@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "8740b48f-89ef-4497-b2b6-4556d12b2cc0",
+		"name": "sw_épreuveFinal_2346584",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39991642"
+	},
+	"item": [
+		{
+			"name": "faireUtilisateur",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nom\": \"Doe\",\r\n\"prenom\": \"John\",\r\n\"courriel\": \"john.doe@example.com\",\r\n\"motDePasse\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/auth/register",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtenirclée",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"courriel\": \"john.doe@example.com\",\r\n\"motDePasse\": \"password123\",\r\n\"genererNouveau\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "creerTaches",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titre\": \"nadeau\",\r\n    \"description\": \"hugo\",\r\n    \"date_debut\": \"2025-05-07\",\r\n    \"date_echeance\": \"2025-05-16\",\r\n    \"complete\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/tasks/",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListeTache",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tacheDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/tasks/1",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update tache",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"test\",\r\n  \"description\": \"juste des test\",\r\n  \"date_debut\": \"2025-05-11\",\r\n  \"date_echeance\": \"2025-05-16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/tasks/1",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update tache status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"complete\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/tasks/1/status",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"tasks",
+						"1",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "supprimer",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/tasks/2",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreerSoustache",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"test Sous tache\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/subtasks/1/",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"subtasks",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreerSoustache Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titre\": \"test Sous\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/subtasks/1/1",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"subtasks",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SoustacheStatus",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"complete\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/subtasks/1/1/status",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"subtasks",
+						"1",
+						"1",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SupprimerSoustache",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "cle_api 0c0f85edab589ca7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sw-finalapi.onrender.com/subtasks/1/1",
+					"protocol": "https",
+					"host": [
+						"sw-finalapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"subtasks",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
